@@ -1,0 +1,81 @@
+/* Estilos compartidos de las páginas de Lupi — Semper Animo Studios */
+:root {
+  --fondo: #FFF4DA;
+  --tarjeta: #FFFFFF;
+  --texto: #1E2A4A;
+  --texto-suave: #4A5470;
+  --amarillo: #FFC94D;
+  --acento: #C2410C;
+  --borde: rgba(30, 42, 74, 0.12);
+  --destacado: rgba(255, 201, 77, 0.30);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #1B2440;
+    --tarjeta: #28355E;
+    --texto: #F4F1E8;
+    --texto-suave: #C9CEDD;
+    --acento: #FFC94D;
+    --borde: rgba(244, 241, 232, 0.14);
+    --destacado: #34447A;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+a { color: var(--acento); font-weight: 600; }
+a:hover { text-decoration: none; }
+.contenedor { max-width: 760px; margin: 0 auto; padding: 24px 16px 56px; }
+
+/* Encabezado */
+.encabezado { display: flex; align-items: center; gap: 16px; margin: 8px 0 24px; }
+.insignia {
+  width: 72px; height: 72px; flex: none;
+  background: var(--amarillo); border-radius: 19px;
+  display: grid; place-items: center;
+}
+.insignia svg { width: 64px; height: 64px; }
+.encabezado h1 { margin: 0; font-size: 30px; line-height: 1.15; }
+.encabezado p { margin: 4px 0 0; color: var(--texto-suave); }
+
+/* Selector de idioma */
+.idiomas { display: flex; gap: 8px; margin-bottom: 20px; }
+.idiomas a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px;
+  border-radius: 999px; border: 2px solid var(--borde);
+  color: var(--texto); text-decoration: none; background: var(--tarjeta);
+}
+.idiomas a[aria-current="true"] { background: var(--amarillo); border-color: var(--amarillo); color: #1E2A4A; }
+
+/* Contenido */
+.tarjeta {
+  background: var(--tarjeta); border-radius: 22px; padding: 24px 22px;
+  border: 1px solid var(--borde); margin-bottom: 20px;
+}
+.tarjeta h2 { font-size: 24px; margin: 0 0 4px; }
+.tarjeta h3 { font-size: 19px; margin: 26px 0 6px; }
+.tarjeta p, .tarjeta li { color: var(--texto); }
+.tarjeta ul { padding-left: 22px; }
+.fecha { color: var(--texto-suave); font-size: 15px; margin: 0 0 12px; }
+.destacado {
+  background: var(--destacado); border-radius: 14px; padding: 14px 16px; margin: 16px 0;
+}
+.boton {
+  display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; margin: 6px 0;
+  border-radius: 999px; background: var(--amarillo); color: #1E2A4A; text-decoration: none;
+}
+
+/* Pie */
+.pie { text-align: center; color: var(--texto-suave); font-size: 15px; }
+.pie a { font-weight: 600; }
+
+/* Mostrar un idioma a la vez (si no hay JavaScript, se ven los dos) */
+.js [data-idioma] { display: none; }
+.js [data-idioma].visible { display: block; }
